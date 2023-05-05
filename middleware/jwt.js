@@ -15,7 +15,7 @@ exports.validateJwt = async (req, res, next) => {
         return res.status(400).json({ err: err.message });
       }
 
-      console.log(decoded);
+      req.body.userId = decoded._id
       next();
     });
   } catch (err) {

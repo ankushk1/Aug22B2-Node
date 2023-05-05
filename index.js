@@ -4,9 +4,11 @@ const app = express();
 const port = 8000;
 const db = require("./config/mongoose");
 const userRoutes = require("./routes/userRoutes");
+const todoRoutes = require("./routes/todoRoutes");
 
 app.use(bodyParser.json());
 app.use("/user", userRoutes);
+app.use("/todo", todoRoutes);
 // app.get('/home', (req, res) => {
 //   res.send('<h1>NodeJS server running</h1>')
 // })
