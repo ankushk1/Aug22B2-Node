@@ -5,6 +5,8 @@ const port = 8000;
 const db = require("./config/mongoose");
 const userRoutes = require("./routes/userRoutes");
 const todoRoutes = require("./routes/todoRoutes");
+require('dotenv').config()
+
 
 app.use(bodyParser.json());
 app.use("/user", userRoutes);

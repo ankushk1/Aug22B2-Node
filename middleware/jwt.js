@@ -10,7 +10,7 @@ exports.validateJwt = async (req, res, next) => {
     }
 
     // We need to verify the token
-    jwt.verify(token, "secret", function (err, decoded) {
+    jwt.verify(token, process.env.SECRET_KEY , function (err, decoded) {
       if (err) {
         return res.status(400).json({ err: err.message });
       }
